@@ -1,8 +1,9 @@
 import sys
 
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
-from PyQt5 import uic, QtCore
-from mainfail import MainFailClass
+from PyQt5 import QtCore, uic
+
 form_class = uic.loadUiType("newmain.ui")[0]
 
 class NewMain(QMainWindow, form_class):
@@ -12,9 +13,31 @@ class NewMain(QMainWindow, form_class):
         self.setupUi(self)
         self.initUI()
 
-    def initUI(self):
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasUrls:
+            event.accept()
+        else:
+            event.ignore()
 
-        #Create of menubar (create 를 누르면 'New project' 창이 뜨도록하기 )
+    def dragMoveEvent(self, event):
+        if event.mimeData().hasUrls:
+            event.setDropAction(QtCore.Qt.CopyAction)
+            event.aceept()
+        else:
+            event.ignore()
+
+    def dropEvent(self, event):
+        if event.mimeData().hasUrls:
+            event.setDropAction(QtCore.Qt.CopyAction)
+            event.accept()
+            links = []
+            for url in event.mimeData().urls():
+                links.append(str(url.toLicalFile()))
+            self.emit(QtCore.SIGNALS("dropped"),links)
+        else:
+            event.ignore()
+
+    def initUI(self):
 
         #Exit of menubar(self가 붙는지 안 붙는지 다시 확인하기 )
         actionExit = QAction('&Exit', self)
@@ -23,6 +46,8 @@ class NewMain(QMainWindow, form_class):
         actionExit.triggered.connect(qApp.quit)
 
         #drag n drop within list(이름 통일 & 기능 확인하기)
+
+        #LINEAGE도 이제 리스트로 추가되었음
 
         # enabled the drag and drop facility for our two QListWidgets
         self.patient_list = QListWidget()
@@ -48,15 +73,6 @@ class NewMain(QMainWindow, form_class):
         self.patient_list.insertItem(3, l3)
         self.myListWidget1.insertItem(4, l4)
 
-        #위의 아이콘과 아래 세 개의 아이콘 차이 (몇 번쨰 리스트인지가 관련이 있을 듯)
-
-        QListWidgetItem(QIcon('html.png'), "HTLM", self.
-                        cell_list)
-        QListWidgetItem(QIcon('css.png'), "CSS", self.
-                        cell_list)
-        QListWidgetItem(QIcon('javascript.png'), "Javascript", self.
-                        cell_list)
-
         self.setWindowTitle('Qomics');
         self.setLayout(self.myLayout)
 
@@ -71,13 +87,3 @@ class NewMain(QMainWindow, form_class):
         self.show()
 
 
-
-
-#구조 참고하기
-    #def openCellLineWindow(self):
-        #try:
-           #open_CellLineWindow = scatterWindow()
-           #open_CellLineWindow.show()
-       # except:
-            #open_fail = MainFailClass()
-            #open_fail.show()

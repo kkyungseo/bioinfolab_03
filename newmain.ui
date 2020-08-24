@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>180</y>
       <width>201</width>
-      <height>211</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -68,9 +68,9 @@
      <property name="geometry">
       <rect>
        <x>4</x>
-       <y>40</y>
+       <y>45</y>
        <width>191</width>
-       <height>171</height>
+       <height>111</height>
       </rect>
      </property>
      <item>
@@ -89,9 +89,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>210</y>
+      <y>340</y>
       <width>201</width>
-      <height>361</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -152,9 +152,9 @@
      <property name="geometry">
       <rect>
        <x>4</x>
-       <y>50</y>
+       <y>54</y>
        <width>191</width>
-       <height>291</height>
+       <height>111</height>
       </rect>
      </property>
      <item>
@@ -191,6 +191,88 @@
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>170</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>74</x>
+      <y>11</y>
+      <width>56</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lineage</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>-3</x>
+      <y>-9</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_7">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>26</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>43</y>
+      <width>191</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Colon</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Lung</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Leukemia</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Liver</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
