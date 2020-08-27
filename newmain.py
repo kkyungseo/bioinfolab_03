@@ -1,77 +1,71 @@
 import sys
-
+import os
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, uic
 
 form_class = uic.loadUiType("newmain.ui")[0]
-
+currentPath = os.getcwd()
 class NewMain(QMainWindow, form_class):
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.initUI()
 
-    def dragEnterEvent(self, event):
-        if event.mimeData().hasUrls:
-            event.accept()
-        else:
-            event.ignore()
-
-    def dragMoveEvent(self, event):
-        if event.mimeData().hasUrls:
-            event.setDropAction(QtCore.Qt.CopyAction)
-            event.aceept()
-        else:
-            event.ignore()
-
-    def dropEvent(self, event):
-        if event.mimeData().hasUrls:
-            event.setDropAction(QtCore.Qt.CopyAction)
-            event.accept()
-            links = []
-            for url in event.mimeData().urls():
-                links.append(str(url.toLicalFile()))
-            self.emit(QtCore.SIGNALS("dropped"),links)
-        else:
-            event.ignore()
 
     def initUI(self):
 
-        #Exit of menubar(self가 붙는지 안 붙는지 다시 확인하기 )
-        actionExit = QAction('&Exit', self)
-        actionExit.setShortcut('Ctrl+Q')
-        actionExit.setStatusTip('Exit Application')
-        actionExit.triggered.connect(qApp.quit)
+        #exit of menubar
+        quit_action = QAction('Exit', self)
+        quit_action.setShortcut('Crtl+Q')
 
-        #drag n drop within list(이름 통일 & 기능 확인하기)
-
-        #LINEAGE도 이제 리스트로 추가되었음
 
         # enabled the drag and drop facility for our two QListWidgets
+        self.lineage_list = QListWidget()
         self.patient_list = QListWidget()
         self.cell_list = QListWidget()
-        self.cell_list.setViewMode(QListWidget.IconMode)
+        self.drop_list = QListWidget()
+
+        self.drop_list.setViewMode(QListWidget.IconMode)
+
+        self.lineage_list.setAcceptDrops(True)
+        self.lineage_list.setDragEnabled(True)
         self.patient_list.setAcceptDrops(True)
         self.patient_list.setDragEnabled(True)
         self.cell_list.setAcceptDrops(True)
         self.cell_list.setDragEnabled(True)
 
         self.setGeometry(300, 350, 500, 300)
-        self.myLayout = QHBoxLayout()
-        self.myLayout.addWidget(self.patient_list)
-        self.myLayout.addWidget(self.cell_list)
 
         #add items to two QListWidgets to make sure to have some icons in working directoru
-        l1 = QListWidgetItem(QIcon('drugpng'), "Drug&Chemicals")
-        l2 = QListWidgetItem(QIcon('CRISPR.png'), "CRISPR(sgRNA)")
-        l3 = QListWidgetItem(QIcon('shRNA.png'), "shRNA knockdown")
-        l4 = QListWidgetItem(QIcon('mRNA.png'), "Gene(mRNA)expression")
-        self.patient_list.insertItem(1, l1)
-        self.patient_list.insertItem(2, l2)
-        self.patient_list.insertItem(3, l3)
-        self.myListWidget1.insertItem(4, l4)
+        l1 = QListWidgetItem(QIcon('colon.png'), "Colon")
+        l2 = QListWidgetItem(QIcon('lung.png'), "Lung")
+        l3 = QListWidgetItem(QIcon('leukemia.png'), "Leukemia")
+        l4 = QListWidgetItem(QIcon('liver.png'), "Liver")
+        l5 = QListWidgetItem(QIcon('survival.png'), "Survival")
+        l6 = QListWidgetItem(QIcon('geneexpression.png'), "Gene(mRNA) expression")
+        l7 = QListWidgetItem(QIcon('drug.png'), "Drug & Chemicals")
+        l8 = QListWidgetItem(QIcon('sgRNA.png'), "CRISPR(sgRNA)")
+        l9 = QListWidgetItem(QIcon('shRNA.png'), "shRHA knockdown")
+        l10 = QListWidgetItem(QIcon('mRNA.png'), "Gene(mRNA) expression")
+
+        self.lineage_list.insertItem(0, l1)
+        self.lineage_list.insertItem(1, l2)
+        self.lineage_list.insertItem(2, l3)
+        self.lineage_list.insertItem(3, l4)
+
+        self.patient_list.insertItem(0, l5)
+        self.patient_list.insertItem(1, l6)
+
+        self.cell_list.insertItem(0, l7)
+        self.cell_list.insertItem(1, l8)
+        self.cell_list.insertItem(2, l9)
+        self.cell_list.insertItem(3, l10)
+
+        QListWidgetItem(QIcon('colon.png'), "HTLM", self.drop_list)
+
+
+
 
         self.setWindowTitle('Qomics');
         self.setLayout(self.myLayout)
@@ -86,4 +80,9 @@ class NewMain(QMainWindow, form_class):
 
         self.show()
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    myWindow = NewMain()
+    myWindow.show()
+    app.exec_()
 
