@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>553</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Qomics</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>image/Qomics_icon.png</normaloff>image/Qomics_icon.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>230</y>
+      <width>200</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>19</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="patient_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Patient sample data</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="patient_list">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>32</y>
+       <width>191</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::DragOnly</enum>
+     </property>
+     <item>
+      <property name="text">
+       <string>Survival Analysis</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Survival.png</normaloff>png/Survival.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gene(mRNA) expression</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Gene (mRNA) expression.png</normaloff>png/Gene (mRNA) expression.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>364</y>
+      <width>201</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="Line" name="line_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>28</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-11</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="cell_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Cell line data</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="cell_list">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>40</y>
+       <width>191</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::DragOnly</enum>
+     </property>
+     <item>
+      <property name="text">
+       <string>Drug/Chemical Response</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Drug&amp;Chemicals.png</normaloff>png/Drug&amp;Chemicals.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>CRISPR (sgRNA)</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/CRISPR (sgRNA).png</normaloff>png/CRISPR (sgRNA).png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>shRNA knockdown</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/shRNA knockdown.png</normaloff>png/shRNA knockdown.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gene(mRNA) expression</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Gene(mRNA) expression.png</normaloff>png/Gene(mRNA) expression.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>-20</y>
+      <width>20</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>215</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>-2</x>
+      <y>-9</y>
+      <width>801</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>503</y>
+      <width>801</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>1</x>
+      <y>90</y>
+      <width>201</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>3</y>
+       <width>56</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>Lineage</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_7">
+     <property name="geometry">
+      <rect>
+       <x>-3</x>
+       <y>20</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>38</y>
+       <width>191</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::DragOnly</enum>
+     </property>
+     <item>
+      <property name="text">
+       <string>Colon</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Colon.png</normaloff>png/Colon.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Lung</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Lung.png</normaloff>png/Lung.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Leukemia</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Leukemia.png</normaloff>png/Leukemia.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Liver</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>png/Liver.png</normaloff>png/Liver.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>60</y>
+      <width>231</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <widget class="QWidget" name="widget">
+     <attribute name="title">
+      <string>KM plot</string>
+     </attribute>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>40</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/Survival.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>32</y>
+        <width>111</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/Gene(mRNA) expression.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="kmplot_btn">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>110</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Go</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_10">
+      <property name="geometry">
+       <rect>
+        <x>52</x>
+        <y>64</y>
+        <width>118</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <zorder>line_10</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
+     <zorder>kmplot_btn</zorder>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>512</x>
+      <y>60</y>
+      <width>231</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="tabWidget_5Page1">
+     <attribute name="title">
+      <string>Cross Association </string>
+     </attribute>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>40</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/Gene (mRNA) expression.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>113</x>
+        <y>41</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/CRISPR (sgRNA).png</pixmap>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="cross_btn">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>110</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Go</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_11">
+      <property name="geometry">
+       <rect>
+        <x>52</x>
+        <y>63</y>
+        <width>118</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <zorder>line_11</zorder>
+     <zorder>label_6</zorder>
+     <zorder>label_7</zorder>
+     <zorder>cross_btn</zorder>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>260</y>
+      <width>231</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="tabWidget_6Page1">
+     <attribute name="title">
+      <string>Sample distribution</string>
+     </attribute>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>40</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/Gene (mRNA) expression.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>116</x>
+        <y>40</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>png/Drug&amp;Chemicals.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="sample_btn">
+      <property name="geometry">
+       <rect>
+        <x>167</x>
+        <y>112</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Go</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_12">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>63</y>
+        <width>118</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>5</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <zorder>line_12</zorder>
+     <zorder>label_8</zorder>
+     <zorder>label_9</zorder>
+     <zorder>sample_btn</zorder>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>260</y>
+      <width>241</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="tabWidget_7Page1">
+     <attribute name="title">
+      <string>Create analysis</string>
+     </attribute>
+     <widget class="QListWidget" name="create_list">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>27</y>
+        <width>231</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::DragDrop</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>120</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="verticalScrollMode">
+       <enum>QAbstractItemView::ScrollPerItem</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QListView::IconMode</enum>
+      </property>
+      <property name="itemAlignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="create_btn">
+      <property name="geometry">
+       <rect>
+        <x>173</x>
+        <y>113</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Go</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="Line" name="line_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>56</x>
+      <y>8</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Q-omics</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>66</x>
+      <y>41</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>beta v 0.1</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>771</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>Overview</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCreate">
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>Data</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuCreate"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="quit_action">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="whatsThis">
+    <string>quit function of menubar</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+    </font>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
